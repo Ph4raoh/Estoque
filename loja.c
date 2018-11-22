@@ -2,7 +2,6 @@
 
 int main(){
 
-
     struct produto{
         char nome[6][300];
         char marca [6][300];
@@ -12,88 +11,153 @@ int main(){
 
     struct produto p;
 
- int loop = 0,x,temp;
+    int con = 1;
 
- int deci,linha;
+    int Cadastro_de_produtos;
 
-    while( loop != -1){
+    int Compras_de_produtos;
+
+    int Vendas_de_produtos;
+
+    int Controle_de_estoque;
+
+    int loop = 0,x,temp;
+
+    int deci,linha;
+
+    while(con = 1){
 
      system("clear");
 
-     puts("Nome:");
-     scanf("%s",p.nome[loop]);
-     puts("");
 
-     puts("Marca:");
-     scanf("%s",p.marca[loop]);
-     puts(""); 
+     puts("╔═╗┌─┐┌┐┌┌┬┐┬─┐┌─┐┬  ┌─┐  ┌┬┐┌─┐  ╔═╗┌─┐┌┬┐┌─┐┌─┐ ┬ ┬┌─┐");
+     puts("║  │ ││││ │ ├┬┘│ ││  ├┤    ││├┤   ║╣ └─┐ │ │ ││─┼┐│ │├┤ ");
+     puts("╚═╝└─┘┘└┘ ┴ ┴└─└─┘┴─┘└─┘  ─┴┘└─┘  ╚═╝└─┘ ┴ └─┘└─┘└└─┘└─┘");
+                                                        
+                                                      
+     puts("\n");
 
-     puts("Preço:");
-     scanf("%f",&p.preco[loop]);
-     puts("");
+     puts("[1] - Cadastro de produtos\n");
+     puts("[2] - Compras de produtos\n");
+     puts("[3] - Vendas de produtos\n");
 
-     puts("Quantidade:");
-     scanf("%d",&p.quantidade[loop]);
 
-     puts("");
+     puts("Escolha:");
+     scanf("%d",&Controle_de_estoque);
 
-     puts("Continuar? 1 = Sim || 2 = Não");
-     
-     scanf("%d",&deci);
 
-     if(deci == 1){
-         loop++;
-         temp = loop + 1;
-     }else{
-         loop = -1;
-     }
+        switch (Controle_de_estoque){
+
+    
+            case 1:
+
+             system("clear");
+
+             puts("╔═╗┌─┐┌┬┐┌─┐┌─┐┌┬┐┬─┐┌─┐  ┌┬┐┌─┐  ┌─┐┬─┐┌─┐┌┬┐┬ ┬┌┬┐┌─┐┌─┐");
+             puts("║  ├─┤ ││├─┤└─┐ │ ├┬┘│ │   ││├┤   ├─┘├┬┘│ │ │││ │ │ │ │└─┐");
+             puts("╚═╝┴ ┴─┴┘┴ ┴└─┘ ┴ ┴└─└─┘  ─┴┘└─┘  ┴  ┴└─└─┘─┴┘└─┘ ┴ └─┘└─┘");
+
+             puts("\n");
+
+             puts("[1] - Realizar cadastro\n");
+             puts("[2] - Exibir cadastros\n");
+             puts("[3] - Atualizar cadastro\n");
+             puts("[4] - Salvar cadastro\n");
+             puts("[5] - Excluir cadastro\n");
+
+             puts("Escolha:");
+             scanf("%d",&Cadastro_de_produtos);
+
+
+                switch(Cadastro_de_produtos){
+
+                    case 1: //Realizar cadastro
+
+
+                         while( loop != -1){
+
+                            system("clear");
+
+                            puts("Nome:");
+                            scanf("%s",p.nome[loop]);
+                            puts("");
+
+                            puts("Marca:");
+                            scanf("%s",p.marca[loop]);
+                            puts(""); 
+
+                            puts("Preço:");
+                            scanf("%f",&p.preco[loop]);
+                            puts("");
+
+                            puts("Quantidade:");
+                            scanf("%d",&p.quantidade[loop]);
+
+                            puts("");
+
+                            puts("Continuar? 1 = Sim || 2 = Não");
+                
+                            scanf("%d",&deci);
+
+                            if(deci == 1){
+                            loop++;
+                            temp = loop + 1;
+                            }
+                    
+                            else{
+                            loop = -1;
+                            }
+
+                            }
+
+                    break;
+
+                }
+
+            break;
+
+            case 2:
+
+                system("clear");
+
+                puts("╔═╗┌─┐┌┬┐┌─┐┬─┐┌─┐┌─┐  ┌┬┐┌─┐  ┌─┐┬─┐┌─┐┌┬┐┬ ┬┌┬┐┌─┐┌─┐");
+                puts("║  │ ││││├─┘├┬┘├─┤└─┐   ││├┤   ├─┘├┬┘│ │ │││ │ │ │ │└─┐");
+                puts("╚═╝└─┘┴ ┴┴  ┴└─┴ ┴└─┘  ─┴┘└─┘  ┴  ┴└─└─┘─┴┘└─┘ ┴ └─┘└─┘");
+            
+                puts("\n");
+
+                puts("[1] - Realizar compra\n");
+                puts("[2] - Ver histórico de compras\n");
+
+                puts("Escolha:");
+                scanf("%d",&Compras_de_produtos);
+            
+            break;
+
+            case 3:
+
+                system("clear");
+
+                int escolha3;
+
+                puts("╦  ╦┌─┐┌┐┌┌┬┐┌─┐┌─┐  ┌┬┐┌─┐  ┌─┐┬─┐┌─┐┌┬┐┬ ┬┌┬┐┌─┐┌─┐");
+                puts("╚╗╔╝├┤ │││ ││├─┤└─┐   ││├┤   ├─┘├┬┘│ │ │││ │ │ │ │└─┐");
+                puts(" ╚╝ └─┘┘└┘─┴┘┴ ┴└─┘  ─┴┘└─┘  ┴  ┴└─└─┘─┴┘└─┘ ┴ └─┘└─┘");
+
+                puts("\n");
+            
+                puts("[1] - Realizar venda\n");
+                puts("[2] - Ver histórico de compras\n");
+
+                puts("Escolha:");
+                scanf("%d",&Vendas_de_produtos);
+            
+                break;
+
+        }
 
     }
-
-   system("clear");
-   
-    for(x=0; x<temp; x++){
-
-     puts("---------------------------------------------------------------");
-     printf("[%d]-Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
-    }
-
-    puts("");
-
-    scanf("%d",&linha);
-
-
-    for(x=0; x<5; x++){
-     
-     if( x == linha){
-       
-       puts("Nome:");
-     scanf("%s",p.nome[x - 1]);
-     puts("");
-
-     puts("Marca:");
-     scanf("%s",p.marca[x - 1]);
-     puts(""); 
-
-     puts("Preço:");
-     scanf("%f",&p.preco[x - 1]);
-     puts("");
-
-     puts("Quantidade:");
-     scanf("%d",&p.quantidade[x - 1]);
-
-
-     }
-
-    }
-
-    puts("");
-
-    for(x=0; x<2; x++){
-
-     puts("---------------------------------------------------------------");
-     printf("[%d]-Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
-    }
+    
 
     return 0;
 }
