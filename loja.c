@@ -130,6 +130,7 @@ int main(){
                             printf("ID-%d | Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
 
                         }
+                       
 
                         puts("");
 
@@ -168,7 +169,39 @@ int main(){
                             puts("Nome:");
                             scanf("%s",p.nome[linha - 1]);
 
-                        }          
+                        }
+
+                        if(atualizar == 2){
+                            system("clear");
+                            puts("Marca:");
+                            scanf("%s",p.marca[linha - 1]);
+
+                        }
+
+                        if(atualizar == 3){
+                            system("clear");
+                            puts("Preço:");
+                            scanf("%f",&p.preco[linha - 1]);
+
+                        }
+
+                        if(atualizar == 4){
+                            system("clear");
+                            puts("Quantidade:");
+                            scanf("%d",&p.quantidade[linha - 1]);
+
+                        }
+
+                        puts("");
+
+                        system("clear");
+
+                        puts("Atualizado com sucesso!");
+
+                        puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
+        
             
                     break;
 
@@ -176,6 +209,8 @@ int main(){
 
                       
                       system("clear");
+
+                      estoque = fopen("estoque.txt", "w");
 
                         for(x=0; x<3; x++){
 
@@ -187,39 +222,40 @@ int main(){
                             fprintf(estoque, "Preço: %0.2f | ",p.preco[x]);
 
                             fprintf(estoque, "Quantidade: %d\n",p.quantidade[x]);
-
-                            puts("");
-
-                            puts("Salvo com sucesso!\n");
-
-                            puts("Digite 1 para voltar ao menu");
-            
-                            scanf("%d",&deci);
-
-                            break;
+   
                         }
+
+                        puts("");
                       
-                      fclose(estoque);
+                        fclose(estoque);
+
+                        puts("Salvo com sucesso!");
+
+                        puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
+
+                        break;
 
                     break;
 
                     case 5:
 
-                     system("clear");
+                        system("clear");
 
-                     estoque = fopen("estoque.txt", "w");
+                        estoque = fopen("estoque.txt", "w");
 
-                     fclose(estoque);
+                        fclose(estoque);
 
-                     puts("");
+                        puts("");
 
-                            puts("Excluido com sucesso!\n");
+                        puts("Excluido com sucesso!\n");
 
-                            puts("Digite 1 para voltar ao menu");
-            
-                            scanf("%d",&deci);
+                        puts("Digite 1 para voltar ao menu");
+        
+                        scanf("%d",&deci);
 
-                            break;
+                        break;
 
                     break;
 
