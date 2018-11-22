@@ -27,6 +27,10 @@ int main(){
 
     int atualizar;
 
+    FILE *estoque;
+
+    estoque = fopen("estoque.txt", "a");
+
 
     while(con = 1){
 
@@ -80,8 +84,6 @@ int main(){
                          while( loop != -1){
 
                             system("clear");
-
-                            printf("%d",loop);
 
                             puts("Nome:");
                             scanf("%s",p.nome[loop]);
@@ -168,6 +170,57 @@ int main(){
 
                         }          
             
+                    break;
+
+                    case 4: //Salvar cadastro
+
+                      
+                      system("clear");
+
+                        for(x=0; x<3; x++){
+
+
+                            fprintf(estoque, "ID-%d | Nome: %s | ",x + 1,p.nome[x]);
+                          
+                            fprintf(estoque, "Marca: %s | ",p.marca[x]);
+
+                            fprintf(estoque, "Preço: %0.2f | ",p.preco[x]);
+
+                            fprintf(estoque, "Quantidade: %d\n",p.quantidade[x]);
+
+                            puts("");
+
+                            puts("Salvo com sucesso!\n");
+
+                            puts("Digite 1 para voltar ao menu");
+            
+                            scanf("%d",&deci);
+
+                            break;
+                        }
+                      
+                      fclose(estoque);
+
+                    break;
+
+                    case 5:
+
+                     system("clear");
+
+                     estoque = fopen("estoque.txt", "w");
+
+                     fclose(estoque);
+
+                     puts("");
+
+                            puts("Excluido com sucesso!\n");
+
+                            puts("Digite 1 para voltar ao menu");
+            
+                            scanf("%d",&deci);
+
+                            break;
+
                     break;
 
                 }
