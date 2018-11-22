@@ -25,6 +25,9 @@ int main(){
 
     int deci,linha;
 
+    int atualizar;
+
+
     while(con = 1){
 
      system("clear");
@@ -78,6 +81,8 @@ int main(){
 
                             system("clear");
 
+                            printf("%d",loop);
+
                             puts("Nome:");
                             scanf("%s",p.nome[loop]);
                             puts("");
@@ -101,7 +106,6 @@ int main(){
 
                             if(deci == 1){
                             loop++;
-                            temp = loop + 1;
                             }
                     
                             else{
@@ -110,6 +114,60 @@ int main(){
 
                             }
 
+                    break;
+                    
+                    
+
+                    case 2: //Exibir cadastros
+
+                      system("clear");
+
+                        for(x=0; x<3; x++){
+
+                            puts("---------------------------------------------------------------");
+                            printf("ID-%d | Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
+
+                        }
+
+                        puts("");
+
+                        puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
+                
+                    break;
+
+                    case 3: //Atualizar cadastro
+
+                      system("clear");
+
+                        for(x=0; x<3; x++){
+
+                            puts("---------------------------------------------------------------");
+                            printf("ID-%d | Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
+
+                        }
+
+                        puts("");
+
+                        puts("Qual produto deseja atualizar?");
+
+                        scanf("%d",&linha);
+
+            
+                        puts("");
+
+                        puts("Atualizar: 1-Nome | 2-Marca | 3-Preço | 4-Quantidade");
+
+                        scanf("%d",&atualizar);
+
+                        if(atualizar == 1){
+                            system("clear");
+                            puts("Nome:");
+                            scanf("%s",p.nome[linha - 1]);
+
+                        }          
+            
                     break;
 
                 }
