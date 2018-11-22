@@ -14,11 +14,9 @@ int main(){
 
  int loop = 0,x,temp;
 
- int deci;
+ int deci,linha;
 
     while( loop != -1){
-
-        printf("%d",loop);
 
      system("clear");
 
@@ -55,6 +53,43 @@ int main(){
    system("clear");
    
     for(x=0; x<temp; x++){
+
+     puts("---------------------------------------------------------------");
+     printf("[%d]-Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
+    }
+
+    puts("");
+
+    scanf("%d",&linha);
+
+
+    for(x=0; x<5; x++){
+     
+     if( x == linha){
+       
+       puts("Nome:");
+     scanf("%s",p.nome[x - 1]);
+     puts("");
+
+     puts("Marca:");
+     scanf("%s",p.marca[x - 1]);
+     puts(""); 
+
+     puts("Preço:");
+     scanf("%f",&p.preco[x - 1]);
+     puts("");
+
+     puts("Quantidade:");
+     scanf("%d",&p.quantidade[x - 1]);
+
+
+     }
+
+    }
+
+    puts("");
+
+    for(x=0; x<2; x++){
 
      puts("---------------------------------------------------------------");
      printf("[%d]-Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
