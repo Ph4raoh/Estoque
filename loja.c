@@ -27,7 +27,17 @@ int main(){
 
     int atualizar;
 
+    int excluir;
+
     FILE *estoque;
+
+    FILE *alterado;
+
+    int linha_atual = 0, linha_selecionada = 0;
+
+    char texto[1000] = "";
+
+    char ler;
 
     estoque = fopen("estoque.txt", "a");
 
@@ -124,12 +134,13 @@ int main(){
 
                       system("clear");
 
-                        for(x=0; x<3; x++){
+                            estoque = fopen("estoque.txt", "r");
 
-                            puts("---------------------------------------------------------------");
-                            printf("ID-%d | Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
-
-                        }
+                           while( (ler=fgetc(estoque))!= EOF ){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(estoque);
                        
 
                         puts("");
@@ -210,12 +221,12 @@ int main(){
                       
                       system("clear");
 
-                      estoque = fopen("estoque.txt", "w");
+                      estoque = fopen("estoque.txt", "a");
 
                         for(x=0; x<3; x++){
 
 
-                            fprintf(estoque, "ID-%d | Nome: %s | ",x + 1,p.nome[x]);
+                            fprintf(estoque, "Nome: %s | ",p.nome[x]);
                           
                             fprintf(estoque, "Marca: %s | ",p.marca[x]);
 
@@ -243,16 +254,53 @@ int main(){
 
                         system("clear");
 
-                        estoque = fopen("estoque.txt", "w");
+                        
+                         estoque = fopen("estoque.txt", "r");
 
-                        fclose(estoque);
+                           while( (ler=fgetc(estoque))!= EOF ){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(estoque);
+            
+                        puts("");
+
+                         linha_atual = 0;
+
+                        estoque = fopen("estoque.txt", "r");
+                        alterado = fopen("alterado.txt", "w");
+
+                         scanf("%d",&linha_selecionada);
+
+
+                        while(fgets(texto, 1000, estoque) != NULL){
+                                if(linha_atual != (linha_selecionada - 1)){
+                                    fputs(texto, alterado);
+                                    
+                                }
+                                linha_atual += 1;
+
+        
+                            }
+  
+                            // fechando arquivo
+                            fclose(estoque);
+                            fclose(alterado);
+
+                            remove("estoque.txt");
+                            rename("alterado.txt", "estoque.txt");
+
+                        
+
 
                         puts("");
 
-                        puts("Excluido com sucesso!\n");
+                        system("clear");
+
+                        puts("Excluido com sucesso!");
 
                         puts("Digite 1 para voltar ao menu");
-        
+            
                         scanf("%d",&deci);
 
                         break;
@@ -260,6 +308,7 @@ int main(){
                     break;
 
                 }
+
 
             break;
 
