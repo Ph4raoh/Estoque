@@ -27,6 +27,12 @@ int main(){
 
     int atualizar;
 
+    char nome[20] = "", marca[50] = "";
+
+    float preco;
+
+    int quantidade;
+
     int excluir;
 
     FILE *estoque;
@@ -39,7 +45,13 @@ int main(){
 
     char ler;
 
-    estoque = fopen("estoque.txt", "a");
+
+    char texto2[100] = "";
+
+    FILE *alterado3;
+
+   
+
 
 
     while(con = 1){
@@ -91,6 +103,10 @@ int main(){
                     case 1: //Realizar cadastro
 
 
+                            estoque = fopen("estoque.txt", "a");
+                          
+                          loop = 0;
+
                          while( loop != -1){
 
                             system("clear");
@@ -136,7 +152,7 @@ int main(){
 
                             estoque = fopen("estoque.txt", "r");
 
-                           while( (ler=fgetc(estoque))!= EOF ){
+                           while((ler=fgetc(estoque))!= EOF ){
 		                    putchar(ler);
                            }
 			
@@ -155,53 +171,132 @@ int main(){
 
                       system("clear");
 
-                        for(x=0; x<3; x++){
+                      estoque = fopen("estoque.txt", "r");
 
-                            puts("---------------------------------------------------------------");
-                            printf("ID-%d | Nome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d\n",x + 1,p.nome[x],p.marca[x],p.preco[x],p.quantidade[x]);
 
+                           while((ler=fgetc(estoque))!= EOF){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(estoque);
+                       
+                         puts("\nEscolha uma linha");
+
+                         scanf("%d",&linha_selecionada);
+
+                       linha_atual = 0;
+
+                        estoque = fopen("estoque.txt", "r");
+                        alterado = fopen("alterado.txt", "w");
+
+
+                        while(fgets(texto, 1000, estoque) != NULL){
+                                if(linha_atual == (linha_selecionada - 1)){
+                                    fputs(texto, alterado);
+                                    
+                                }
+                                linha_atual += 1;
+
+        
                         }
 
-                        puts("");
+                        
+                            fclose(estoque);
+                            fclose(alterado);
 
-                        puts("Qual produto deseja atualizar?");
+                            
 
-                        scanf("%d",&linha);
+                /*             
 
-            
-                        puts("");
+                              linha_atual = 0;
 
-                        puts("Atualizar: 1-Nome | 2-Marca | 3-Preço | 4-Quantidade");
+                             estoque = fopen("estoque.txt", "r");
+                             alterado3 = fopen("alterado3.txt", "w");
+
+                        while(fgets(texto2, 100, estoque) != NULL){
+                                 if(linha_atual != (linha_selecionada - 1)){
+                                    fputs(texto2, alterado3);
+                                    }
+                                    linha_atual += 1;
+        
+                            }
+
+                            fclose(estoque);
+                            fclose(alterado3);
+
+                            remove("estoque.txt");
+                            rename("alterado3.txt", "estoque.txt");
+*/
+
+
+                       alterado = fopen("alterado.txt", "r");
+                       (fscanf(alterado,"%s %s %f %d\n",nome,marca,&preco,&quantidade));
+                        printf("\nNome: %s Marca: %s Preço: %0.2f Quantidade: %d\n",nome,marca,preco,quantidade);
+
+                        fclose(alterado);
+
+                         puts("\nAtualizar: 1-Nome | 2-Marca | 3-Preço | 4-Quantidade");
+
 
                         scanf("%d",&atualizar);
 
                         if(atualizar == 1){
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+
                             system("clear");
                             puts("Nome:");
-                            scanf("%s",p.nome[linha - 1]);
+                            scanf("%s",nome);
 
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade);
+                            fclose(estoque);
+                            fclose(alterado);
                         }
+                        
 
-                        if(atualizar == 2){
+                         if(atualizar == 2){
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+
                             system("clear");
                             puts("Marca:");
-                            scanf("%s",p.marca[linha - 1]);
+                            scanf("%s",marca);
 
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade);
+                            fclose(estoque);
+                            fclose(alterado);
                         }
 
-                        if(atualizar == 3){
+                         if(atualizar == 3){
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+
                             system("clear");
                             puts("Preço:");
-                            scanf("%f",&p.preco[linha - 1]);
+                            scanf("%f",&preco);
 
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade);
+                            fclose(estoque);
+                            fclose(alterado);
                         }
 
                         if(atualizar == 4){
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+
                             system("clear");
                             puts("Quantidade:");
-                            scanf("%d",&p.quantidade[linha - 1]);
+                            scanf("%d",&quantidade);
 
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade);
+                            fclose(estoque);
+                            fclose(alterado);
                         }
+
+                        
+
+                          remove("alterado.txt");
+
 
                         puts("");
 
