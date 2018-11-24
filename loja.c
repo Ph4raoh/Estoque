@@ -46,7 +46,7 @@ int main(){
     char ler;
 
 
-    char texto2[100] = "";
+    char texto2[1000] = "";
 
     FILE *alterado3;
 
@@ -206,14 +206,14 @@ int main(){
 
                             
 
-                /*             
+                             
 
                               linha_atual = 0;
 
                              estoque = fopen("estoque.txt", "r");
                              alterado3 = fopen("alterado3.txt", "w");
 
-                        while(fgets(texto2, 100, estoque) != NULL){
+                        while(fgets(texto2, 1000, estoque) != NULL){
                                  if(linha_atual != (linha_selecionada - 1)){
                                     fputs(texto2, alterado3);
                                     }
@@ -226,7 +226,7 @@ int main(){
 
                             remove("estoque.txt");
                             rename("alterado3.txt", "estoque.txt");
-*/
+
 
 
                        alterado = fopen("alterado.txt", "r");
