@@ -45,6 +45,13 @@ int main(){
 
     char ler;
 
+    int comprar;
+  
+    FILE *Historio_Compra;
+
+    int vender;
+  
+    FILE *Historio_Venda;
 
     char texto2[1000] = "";
 
@@ -433,6 +440,127 @@ int main(){
 
                 puts("Escolha:");
                 scanf("%d",&Compras_de_produtos);
+
+                switch (Compras_de_produtos){
+                
+                case 1:
+
+                 system("clear");
+
+                      estoque = fopen("estoque.txt", "r");
+
+
+                           while((ler=fgetc(estoque))!= EOF){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(estoque);
+                       
+                         puts("\n\nEscolha um produto");
+
+                         scanf("%d",&linha_selecionada);
+
+                       linha_atual = 0;
+
+                        estoque = fopen("estoque.txt", "r");
+                        alterado = fopen("alterado.txt", "w");
+
+
+                        while(fgets(texto, 1000, estoque) != NULL){
+                                if(linha_atual == (linha_selecionada - 1)){
+                                    fputs(texto, alterado);
+                                    
+                                }
+                                linha_atual += 1;
+
+        
+                        }
+
+                        
+                            fclose(estoque);
+                            fclose(alterado);
+
+                            
+
+                             
+
+                              linha_atual = 0;
+
+                             estoque = fopen("estoque.txt", "r");
+                             alterado3 = fopen("alterado3.txt", "w");
+
+                        while(fgets(texto2, 1000, estoque) != NULL){
+                                 if(linha_atual != (linha_selecionada - 1)){
+                                    fputs(texto2, alterado3);
+                                    }
+                                    linha_atual += 1;
+        
+                            }
+
+                            fclose(estoque);
+                            fclose(alterado3);
+
+                            remove("estoque.txt");
+                            rename("alterado3.txt", "estoque.txt");
+
+
+
+                       alterado = fopen("alterado.txt", "r");
+                       (fscanf(alterado,"%s %s %f %d",nome, marca, &preco, &quantidade));
+                        printf("\nNome: %s Marca: %s Preço: %0.2f Quantidade: %d",nome,marca,preco,quantidade);
+
+                        fclose(alterado);
+
+                         puts("\nQuantos itens deste produto deseja comprar?");
+
+
+                        scanf("%d",&comprar);
+
+                       
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+                           Historio_Compra = fopen("HistoricoC.txt", "a");
+
+                            system("clear");
+
+                            fprintf(estoque,"%s %s %0.2f %d",nome,marca,preco,quantidade + comprar);
+
+                            fprintf(Historio_Compra,"Produto: %s | Quantidade: %d | Data: %s | Hora: %s\n",nome,comprar,__DATE__,__TIME__);
+                             
+
+                            fclose(estoque);
+                            fclose(alterado);
+                            fclose(Historio_Compra);
+                        
+
+                          remove("alterado.txt");
+
+                          break;
+
+
+                          case 2:
+                          system("clear");
+
+                            Historio_Compra = fopen("HistoricoC.txt", "r");
+
+                           while((ler=fgetc(Historio_Compra))!= EOF ){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(Historio_Compra);
+                       
+
+                        puts("");
+
+                        puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
+                
+                    break;
+
+
+
+                }
             
             break;
 
@@ -453,6 +581,128 @@ int main(){
 
                 puts("Escolha:");
                 scanf("%d",&Vendas_de_produtos);
+
+                switch(Vendas_de_produtos){
+
+                    case 1:
+
+                 system("clear");
+
+                      estoque = fopen("estoque.txt", "r");
+
+
+                           while((ler=fgetc(estoque))!= EOF){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(estoque);
+                       
+                         puts("\n\nEscolha um produto");
+
+                         scanf("%d",&linha_selecionada);
+
+                       linha_atual = 0;
+
+                        estoque = fopen("estoque.txt", "r");
+                        alterado = fopen("alterado.txt", "w");
+
+
+                        while(fgets(texto, 1000, estoque) != NULL){
+                                if(linha_atual == (linha_selecionada - 1)){
+                                    fputs(texto, alterado);
+                                    
+                                }
+                                linha_atual += 1;
+
+        
+                        }
+
+                        
+                            fclose(estoque);
+                            fclose(alterado);
+
+                            
+
+                             
+
+                              linha_atual = 0;
+
+                             estoque = fopen("estoque.txt", "r");
+                             alterado3 = fopen("alterado3.txt", "w");
+
+                        while(fgets(texto2, 1000, estoque) != NULL){
+                                 if(linha_atual != (linha_selecionada - 1)){
+                                    fputs(texto2, alterado3);
+                                    }
+                                    linha_atual += 1;
+        
+                            }
+
+                            fclose(estoque);
+                            fclose(alterado3);
+
+                            remove("estoque.txt");
+                            rename("alterado3.txt", "estoque.txt");
+
+
+
+                       alterado = fopen("alterado.txt", "r");
+                       (fscanf(alterado,"%s %s %f %d",nome, marca, &preco, &quantidade));
+                        printf("\nNome: %s Marca: %s Preço: %0.2f Quantidade: %d",nome,marca,preco,quantidade);
+
+                        fclose(alterado);
+
+                         puts("\nQuantos itens deste produto deseja vender?");
+
+
+                        scanf("%d",&vender);
+
+                       
+                           alterado = fopen("alterado.txt", "r");
+                           estoque = fopen("estoque.txt", "a");
+                           Historio_Venda = fopen("HistoricoV.txt", "a");
+
+                            system("clear");
+
+                            fprintf(estoque,"%s %s %0.2f %d",nome,marca,preco,quantidade - vender);
+
+                            fprintf(Historio_Venda,"Produto: %s | Quantidade: %d | Data: %s | Hora: %s\n",nome,vender,__DATE__,__TIME__);
+                             
+
+                            fclose(estoque);
+                            fclose(alterado);
+                            fclose(Historio_Venda);
+                        
+
+                          remove("alterado.txt");
+
+                          break;
+
+
+                          case 2:
+                          system("clear");
+
+                            Historio_Venda = fopen("HistoricoV.txt", "r");
+
+                           while((ler=fgetc(Historio_Venda))!= EOF ){
+		                    putchar(ler);
+                           }
+			
+	                        fclose(Historio_Venda);
+                       
+
+                        puts("");
+
+                        puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
+                
+                    break;
+
+
+
+                
+                }
             
                 break;
 

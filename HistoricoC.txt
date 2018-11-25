@@ -1,0 +1,2 @@
+Produto: Mortadela | Quantidade: 30 | Data: Nov 25 2018 | Hora: 17:14:02
+Produto: Pão | Quantidade: 99 | Data: Nov 25 2018 | Hora: 17:15:02
