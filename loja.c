@@ -62,6 +62,17 @@ int main(){
      puts("╔═╗┌─┐┌┐┌┌┬┐┬─┐┌─┐┬  ┌─┐  ┌┬┐┌─┐  ╔═╗┌─┐┌┬┐┌─┐┌─┐ ┬ ┬┌─┐");
      puts("║  │ ││││ │ ├┬┘│ ││  ├┤    ││├┤   ║╣ └─┐ │ │ ││─┼┐│ │├┤ ");
      puts("╚═╝└─┘┘└┘ ┴ ┴└─└─┘┴─┘└─┘  ─┴┘└─┘  ╚═╝└─┘ ┴ └─┘└─┘└└─┘└─┘");
+
+
+                            puts("\t\t           ,             ");
+                            puts("\t\t (_\\______/__________    ");
+                            puts("\t\t     \\-|-|/|-|-|-|-|/    ");
+                            puts("\t\t      \\==/-|-|-|-|-/     ");
+                            puts("\t\t       \\/|-|-|-|,-'      ");
+                            puts("\t\t        \\--|-'''         ");
+                            puts("\t\t         \\_j________     ");
+                            puts("\t\t         (_)     (_)     \n");
+                                                   
                                                         
                                                       
      puts("\n");
@@ -321,13 +332,13 @@ int main(){
                         for(x=0; x<3; x++){
 
 
-                            fprintf(estoque, "Nome: %s | ",p.nome[x]);
+                            fprintf(estoque,"%s ",p.nome[x]);
                           
-                            fprintf(estoque, "Marca: %s | ",p.marca[x]);
+                            fprintf(estoque, "%s ",p.marca[x]);
 
-                            fprintf(estoque, "Preço: %0.2f | ",p.preco[x]);
+                            fprintf(estoque, "%0.2f ",p.preco[x]);
 
-                            fprintf(estoque, "Quantidade: %d\n",p.quantidade[x]);
+                            fprintf(estoque, "%d\n",p.quantidade[x]);
    
                         }
 
