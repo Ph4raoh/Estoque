@@ -1,2 +1,10 @@
 Produto: Mortadela | Quantidade: 30 | Data: Nov 25 2018 | Hora: 17:14:02
 Produto: Pão | Quantidade: 99 | Data: Nov 25 2018 | Hora: 17:15:02
+Produto: Leite | Quantidade: 20 | Data: Nov 25 2018 | Hora: 17:30:22
+Produto: Pão | Quantidade: 20 | Data: Nov 25 2018 | Hora: 17:32:12
+Produto: brigaderiro | Quantidade: 60 | Data: Nov 25 2018 | Hora: 17:37:36
+Produto: Leite | Quantidade: 99 | Data: Nov 26 2018 | Hora: 10:33:07
+Produto: Rapadura | Quantidade: 40 | Data: Nov 26 2018 | Hora: 10:38:38
+Produto: dsfsdf | Quantidade: 50 | Data: Nov 26 2018 | Hora: 10:41:13
+Produto: xcvxcv | Quantidade: 15 | Data: Nov 26 2018 | Hora: 10:45:47
+Produto: brigaderiro | Quantidade: 35 | Data: Nov 26 2018 | Hora: 10:51:59

@@ -511,7 +511,7 @@ int main(){
 
                         fclose(alterado);
 
-                         puts("\nQuantos itens deste produto deseja comprar?");
+                         puts("\n\nQuantos itens deste produto deseja comprar?");
 
 
                         scanf("%d",&comprar);
@@ -523,7 +523,7 @@ int main(){
 
                             system("clear");
 
-                            fprintf(estoque,"%s %s %0.2f %d",nome,marca,preco,quantidade + comprar);
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade + comprar);
 
                             fprintf(Historio_Compra,"Produto: %s | Quantidade: %d | Data: %s | Hora: %s\n",nome,comprar,__DATE__,__TIME__);
                              
@@ -534,6 +534,12 @@ int main(){
                         
 
                           remove("alterado.txt");
+
+                          puts("");
+
+                          puts("Digite 1 para voltar ao menu");
+            
+                        scanf("%d",&deci);
 
                           break;
 
@@ -648,11 +654,11 @@ int main(){
 
                        alterado = fopen("alterado.txt", "r");
                        (fscanf(alterado,"%s %s %f %d",nome, marca, &preco, &quantidade));
-                        printf("\nNome: %s Marca: %s Preço: %0.2f Quantidade: %d",nome,marca,preco,quantidade);
+                        printf("\nNome: %s | Marca: %s | Preço: %0.2f | Quantidade: %d",nome,marca,preco,quantidade);
 
                         fclose(alterado);
 
-                         puts("\nQuantos itens deste produto deseja vender?");
+                         puts("\n\nQuantos itens deste produto deseja vender?");
 
 
                         scanf("%d",&vender);
@@ -664,7 +670,7 @@ int main(){
 
                             system("clear");
 
-                            fprintf(estoque,"%s %s %0.2f %d",nome,marca,preco,quantidade - vender);
+                            fprintf(estoque,"%s %s %0.2f %d\n",nome,marca,preco,quantidade - vender);
 
                             fprintf(Historio_Venda,"Produto: %s | Quantidade: %d | Data: %s | Hora: %s\n",nome,vender,__DATE__,__TIME__);
                              

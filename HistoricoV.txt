@@ -1,1 +1,6 @@
 Produto: Pão | Quantidade: 55 | Data: Nov 25 2018 | Hora: 17:23:28
+Produto: Rapadura | Quantidade: 8 | Data: Nov 25 2018 | Hora: 17:27:46
+Produto: Leite | Quantidade: 80 | Data: Nov 25 2018 | Hora: 17:33:17
+Produto: Pão | Quantidade: 20 | Data: Nov 26 2018 | Hora: 10:38:38
+Produto: brigaderiro | Quantidade: 20 | Data: Nov 26 2018 | Hora: 10:45:47
+Produto: Leite | Quantidade: 19 | Data: Nov 26 2018 | Hora: 10:51:00
