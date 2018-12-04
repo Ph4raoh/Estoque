@@ -8,3 +8,4 @@ Produto: Rapadura | Quantidade: 40 | Data: Nov 26 2018 | Hora: 10:38:38
 Produto: dsfsdf | Quantidade: 50 | Data: Nov 26 2018 | Hora: 10:41:13
 Produto: xcvxcv | Quantidade: 15 | Data: Nov 26 2018 | Hora: 10:45:47
 Produto: brigaderiro | Quantidade: 35 | Data: Nov 26 2018 | Hora: 10:51:59
+Produto: Rapadura | Quantidade: 50 | Data: Nov 26 2018 | Hora: 10:51:59
